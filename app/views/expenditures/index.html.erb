@@ -1,10 +1,11 @@
-<h1>Expenses</h1>
-
+<h1>Expenditures</h1>
+<h3>Category Total: $<%=@category.total %></h3>
 <ul>
+ 
   <% @expenditures.each do |expense| %>
     <li>Name: <%= expense.name%> Amount: <%= expense.amount%> </li>
   <% end %>
 </ul>
 
-<%= link_to "Add Expense", new_category_expenditure_path(@expenditures) %>
+<%= link_to "Add Expense", new_category_expenditure_path(@category.id) %>
 
