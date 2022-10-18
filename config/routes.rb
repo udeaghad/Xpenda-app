@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   root 'categories#index' 
   
-  resources :categories, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :categories, only: [:index, :new, :create, :edit, :update, :destroy] do 
+    resources :expenditures, only: [:index, :new, :create, :edit, :update, :destroy]
+  end
    
   
 end
