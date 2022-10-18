@@ -1,0 +1,18 @@
+<%= form_with model: @category, url: categories_path , method: :post, local: true do |f|%>
+<div class="form-card">
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div><br>
+
+  <div>
+    <%= f.label :icon %>
+    <%= f.text_field :icon %>
+  </div><br>
+
+  <div>
+    <%= f.submit %>
+  </div>
+  </div>
+
+<% end %>

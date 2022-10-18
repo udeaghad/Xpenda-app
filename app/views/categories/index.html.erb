@@ -1,0 +1,10 @@
+<h1>List all Categories</h1>
+
+<%@categories.each do |category| %>
+<ul>
+ <li>Category: <%= category.name %> Total: <%=category.total%></li>
+</ul>
+
+<% end %>
+
+<%= link_to "Add Category", new_category_path %>
