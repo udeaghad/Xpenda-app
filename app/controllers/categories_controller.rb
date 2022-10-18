@@ -39,6 +39,18 @@ def update
   end
 end
 
+def destroy
+  @category = Category.find(params[:id])
+  if @category.destroy
+    flash[:success] = 'Object was successfully deleted.'
+    redirect_to categories_url
+  else
+    flash[:error] = 'Something went wrong'
+    redirect_to categories_url
+  end
+end
+
+
 private 
  def category_params
   params.require(:category).permit(:name, :icon)

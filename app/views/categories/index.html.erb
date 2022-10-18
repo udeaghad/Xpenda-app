@@ -7,6 +7,7 @@
    <div>
      Category: <%= category.name %> Total: <%=category.total%>
      <%= link_to "Edit", edit_category_path(category.id)%>
+     <%= button_to "Delete", category_path(category.id), method: :delete, data: { turbo_confirm: "Are you sure you want to delete #{category.name}"}%>
     </div>
   </li>
 
