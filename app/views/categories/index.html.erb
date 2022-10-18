@@ -1,10 +1,17 @@
 <h1>List all Categories</h1>
 
-<%@categories.each do |category| %>
 <ul>
- <li>Category: <%= category.name %> Total: <%=category.total%></li>
-</ul>
+<%@categories.each do |category| %>
+
+ <li>
+   <div>
+     Category: <%= category.name %> Total: <%=category.total%>
+     <%= link_to "Edit", edit_category_path(category.id)%>
+    </div>
+  </li>
+
 
 <% end %>
+</ul>
 
 <%= link_to "Add Category", new_category_path %>
