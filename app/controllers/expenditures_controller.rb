@@ -1,4 +1,7 @@
 class ExpendituresController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
+
   def index
     @category = Category.find(params[:category_id])
     @expenditures = @category.expenditures.all

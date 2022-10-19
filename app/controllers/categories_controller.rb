@@ -1,8 +1,10 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
+
  def index
   @categories = Category.all
-  @total = Category.all.sum(:total)
+  @total = Category.where("user_id = ?", current_user.id).sum(:total)
  end
 
  def new
@@ -16,6 +18,7 @@ class CategoriesController < ApplicationController
  def create
   @category = Category.new(category_params)
   @category.user_id = current_user.id
+  
   if @category.save
     redirect_to categories_path
   else
@@ -33,6 +36,7 @@ end
 
 def update 
   @category = Category.find(params[:id])
+  
   if @category.update(category_params)
     redirect_to categories_path
   else 
@@ -42,6 +46,7 @@ end
 
 def destroy
   @category = Category.find(params[:id])
+  
   if @category.destroy
     flash[:success] = 'Object was successfully deleted.'
     redirect_to categories_url

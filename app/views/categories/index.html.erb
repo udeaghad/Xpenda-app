@@ -1,11 +1,13 @@
 <h1>List all Categories</h1>
 
-<ul>
-<div>Total Amount Spent: <%= @total%> </div>
-<%@categories.each do |category| %>
- 
 
- <li>
+<ul>
+
+<div>Total Amount Spent: <%= @total%> </div>
+
+<%@categories.each do |category| %>
+ <% if can? :read, category %>
+  <li>
    <div>
      Category: <%= category.name %> Total: <%=category.total%>
      <%= link_to "Edit", edit_category_path(category.id)%>
@@ -13,7 +15,7 @@
      <%= link_to "Details", category_expenditures_path(category.id)  %>
     </div>
   </li>
-
+<% end %>
 
 <% end %>
 </ul>
