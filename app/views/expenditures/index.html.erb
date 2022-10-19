@@ -1,6 +1,8 @@
-<h1>Transanctions</h1>
+<h1>Transanction Details</h1>
 
-<h3>Category Total: $<%=@category.total %></h3>
+<%= link_to "Back", categories_path %>
+
+<h3>Total spent on <%= @category.name%>: $<%=@category.total %></h3>
 
 <ul>
  
@@ -10,7 +12,7 @@
     <li>
     Date: <%= expense.created_at.strftime("%d/%m/%Y") %>
     Name: <%= expense.name%> 
-    Amount: <%= expense.amount%>
+    Amount: $<%= expense.amount%>
     <%= button_to 'Delete', category_expenditure_path(@category.id, expense.id), method: :delete, data: { turbo_confirm: "Are you sure you want to delete #{expense.name}?"} %>
     </li>
     <%end%>
