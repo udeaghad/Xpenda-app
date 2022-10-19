@@ -1,0 +1,20 @@
+<h1>Edit Expense</h1>
+
+<%= form_with model: @expenditure, url: category_expenditure_path, method: :put, local: true do |f|%>
+<div class="form-card">
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div><br>
+
+  <div>
+    <%= f.label :amount %>
+    <%= f.number_field :amount, step: 0.01 %>
+  </div><br>
+
+  <div>
+    <%= f.submit %>
+  </div>
+  </div>
+
+<% end %>

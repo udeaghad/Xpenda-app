@@ -25,6 +25,16 @@ class ExpendituresController < ApplicationController
     
   end
 
+  
+
+  def destroy
+    @expenditure = Expenditure.find(params[:id])
+    @expenditure.destroy
+    @expenditure.update_categories_total_after_destroy
+    redirect_to category_expenditures_path(@expenditure.category_id)
+  end
+
+
   private
   def expenditure_params
    params.require(:expenditure).permit(:name, :amount)

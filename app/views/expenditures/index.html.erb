@@ -2,8 +2,13 @@
 <h3>Category Total: $<%=@category.total %></h3>
 <ul>
  
-  <% @expenditures.each do |expense| %>
-    <li>Name: <%= expense.name%> Amount: <%= expense.amount%> </li>
+  <% @expenditures.each do |expense| %>  
+    <li>
+    Date: <%= expense.created_at.strftime("%d/%m/%Y") %>
+    Name: <%= expense.name%> 
+    Amount: <%= expense.amount%>
+    <%= button_to 'Delete', category_expenditure_path(@category.id, expense.id), method: :delete, data: { turbo_confirm: "Are you sure you want to delete #{expense.name}?"} %>
+    </li>
   <% end %>
 </ul>
 
