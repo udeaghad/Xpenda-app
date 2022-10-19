@@ -75,6 +75,7 @@ group :test do
   gem "webdrivers"
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'ffi'
 end
 
 gem 'devise'
