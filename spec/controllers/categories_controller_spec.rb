@@ -18,7 +18,7 @@ RSpec.describe CategoriesController, type: :controller do
       expect(response).to render_template(:index)
     end
 
-    it "assigns all category to @categories" do
+    it "assigns all categories to @categories" do
       get :index
       expect(assigns(:categories)).to eq(Category.all)
      end
