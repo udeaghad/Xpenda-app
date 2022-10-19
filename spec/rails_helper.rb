@@ -2,6 +2,7 @@
 require 'spec_helper'
 require 'devise'
 require 'support/request_macros'
+require 'support/controller_macros'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
@@ -65,4 +66,6 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
   config.include DeviseRequestSpecHelpers, type: :request
+  config.include DeviseControllerSpecHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
