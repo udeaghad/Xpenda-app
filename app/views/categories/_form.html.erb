@@ -7,7 +7,12 @@
 
   <div>
     <%= f.label :icon %>
-    <%= f.text_field :icon %>
+    <%= f.select :icon, [
+      ["Family", "family-icon.png"],["Bills", "bills-icon.png" ],["Groceries", "groceries-icon.png"],
+      ["Shopping", "shopping-icon.png"],["Health", "health-icon.png"], ["Transport", "transport-icon.png"],
+      ["Restaurant", "restaurant-icon.png"],["Education", "education-icon.png"], ["Holiday", "holiday-icon.png"],
+      ["Investment", "investment-icon.png"], ["Others", "others-icon.png"]
+      ] %>
   </div><br>
 
   <div>

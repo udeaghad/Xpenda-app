@@ -14,6 +14,11 @@
   </div><br>
 
   <div>
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, Category.where("id = ?", params[:category_id] ).order(:name), :id, :name %>
+  </div>
+
+  <div>
     <%= f.submit 'Add Expense' %>
   </div>
 
