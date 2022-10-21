@@ -17,6 +17,6 @@ RSpec.describe "Categories", type: :request do
     end
     
     it 'page contains the correct text' do
-      expect(response.body).to include('Expense Categories')
+      expect(response.body).to include('Transaction Categories')
     end    
 end

@@ -4,7 +4,7 @@ class ExpendituresController < ApplicationController
 
   def index
     @category = Category.find(params[:category_id])
-    @expenditures = @category.expenditures.all
+    @expenditures = @category.expenditures.order(created_at: :desc)
   end
 
   def new 

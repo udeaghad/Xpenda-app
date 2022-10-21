@@ -9,7 +9,7 @@
   <div class='login-link'>
   <% if user_signed_in? %>
   <button class="sign-in-btn">
-  <% link_to 'Sign out', destroy_user_session_path, method: :delete, class: "sign-in-label" %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "sign-in-label" %>
   </button>
   <%else%>
   <button class="sign-in-btn">

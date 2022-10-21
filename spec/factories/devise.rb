@@ -11,7 +11,7 @@ FactoryBot.define do
   factory :category do
     id { 1 }
     name { 'Food' }
-    icon { 'fas fa-utensils' }
+    icon { 'family-icon.png' }
     user_id { 1 }
     total { 0 }
   end

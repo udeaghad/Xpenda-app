@@ -17,7 +17,7 @@ RSpec.describe "Expenditures", type: :request do
     end
     
     it 'page contains the correct text' do
-      expect(response.body).to include('Transanctions')
+      expect(response.body).to include('Transaction Details')
     end 
 
     it 'page contains the correct text' do

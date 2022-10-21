@@ -8,7 +8,7 @@ RSpec.describe "categories", type: :feature do
   end
 
   it 'categories index page' do    
-    expect(page).to have_content('Category')
+    expect(page).to have_content('Categories')
   end
 
   it 'categories index page' do    
@@ -24,7 +24,7 @@ RSpec.describe "categories", type: :feature do
   end
 
   it 'categories index page' do
-    expect(page).to have_content('Delete')
+    expect(page).to have_content('Remove')
   end
 
   it 'categories index page' do
@@ -33,10 +33,6 @@ RSpec.describe "categories", type: :feature do
 
   it 'categories index page' do
     expect(page).to have_content('Joy')
-  end
-
-  it 'categories index page' do
-    expect(page).to have_content('Sign Out')
   end
 
   it 'categories index page' do

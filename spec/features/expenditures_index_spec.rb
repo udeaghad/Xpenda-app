@@ -9,7 +9,7 @@ RSpec.describe "expenditures", type: :feature do
   end
 
   it 'expenditures index page' do
-    expect(page).to have_content('Transanctions')
+    expect(page).to have_content('Transactions')
   end
 
   it 'expenditures index page' do
@@ -29,7 +29,7 @@ RSpec.describe "expenditures", type: :feature do
   end
 
   it 'expenditures index page' do
-    expect(page).to have_content('Sign Out')
+    expect(page).to have_content('Previous')
   end
 
   it 'expenditures index page' do
