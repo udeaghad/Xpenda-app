@@ -7,10 +7,10 @@ class ExpendituresController < ApplicationController
     @expenditures = @category.expenditures.order(created_at: :desc)
   end
 
-  def new 
-    @expenditure = Expenditure.new  
+  def new
+    @expenditure = Expenditure.new
     respond_to do |format|
-      format.html { render :new, locals: { post: @expenditure} }
+      format.html { render :new, locals: { post: @expenditure } }
     end
   end
 
@@ -19,16 +19,13 @@ class ExpendituresController < ApplicationController
     @expenditure = @category.expenditures.new(expenditure_params)
     @expenditure.user_id = current_user.id
     @expenditure.update_categories_total
-     
-    if @expenditure.save 
-      redirect_to category_expenditures_path(@category)
-      else
-        render :new
-      end   
-    
-  end
 
-  
+    if @expenditure.save
+      redirect_to category_expenditures_path(@category)
+    else
+      render :new
+    end
+  end
 
   def destroy
     @expenditure = Expenditure.find(params[:id])
@@ -37,12 +34,9 @@ class ExpendituresController < ApplicationController
     redirect_to category_expenditures_path(@expenditure.category_id)
   end
 
-
   private
-  def expenditure_params
-   params.require(:expenditure).permit(:name, :amount)
-  end
 
-  
-  
+  def expenditure_params
+    params.require(:expenditure).permit(:name, :amount)
+  end
 end

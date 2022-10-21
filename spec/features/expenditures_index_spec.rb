@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "expenditures", type: :feature do
+RSpec.describe 'expenditures', type: :feature do
   before :each do
     sign_in create(:user)
-    @category = create(:category) 
+    @category = create(:category)
     @expenditure = create(:expenditure, category_id: @category.id)
     visit category_expenditures_path(@category.id)
   end
@@ -39,6 +39,4 @@ RSpec.describe "expenditures", type: :feature do
   it 'expenditures index page' do
     expect(page).to have_content('Category')
   end
-
-
 end

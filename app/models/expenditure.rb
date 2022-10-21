@@ -1,6 +1,6 @@
 class Expenditure < ApplicationRecord
   belongs_to :user, class_name: 'User'
-  belongs_to :category, class_name: "Category"
+  belongs_to :category, class_name: 'Category'
   # has_many :expenditure_categories, dependent: :destroy, foreign_key: 'expenditure_id'
   # has_many :categories, through: :expenditure_categories, dependent: :destroy
   # has_one :category, through: :expenditure_categories, dependent: :destroy
@@ -9,7 +9,7 @@ class Expenditure < ApplicationRecord
   validates :amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
   def update_categories_total
-     category.update(total: amount + category.total) if amount.present?
+    category.update(total: amount + category.total) if amount.present?
   end
 
   def update_categories_total_after_destroy

@@ -1,21 +1,21 @@
 require 'rails_helper'
 
-RSpec.describe "categories", type: :feature do
+RSpec.describe 'categories', type: :feature do
   before :each do
     sign_in create(:user)
-    @category = create(:category) 
+    @category = create(:category)
     visit categories_path
   end
 
-  it 'categories index page' do    
+  it 'categories index page' do
     expect(page).to have_content('Categories')
   end
 
-  it 'categories index page' do    
+  it 'categories index page' do
     expect(page).to have_content('Details')
   end
 
-  it 'categories index page' do    
+  it 'categories index page' do
     expect(page).to have_content('Add Category')
   end
 
@@ -42,6 +42,4 @@ RSpec.describe "categories", type: :feature do
   it 'categories index page' do
     expect(page).to have_content('Add Expense')
   end
-
- 
 end
